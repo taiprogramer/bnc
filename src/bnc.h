@@ -26,5 +26,15 @@ typedef float real32var;
 typedef double real64var;
 typedef real64var realvar;
 
+// [stdout: Screen]
+struct Screen {
+    struct Screen (*show)(stringvar);
+    struct Screen (*i)(int64var);
+    struct Screen (*c)(charvar);
+    struct Screen (*newline)();
+    struct Screen (*r)(real64var);
+    struct Screen (*s)(stringvar);
+} Screen;
+
 #endif
 
