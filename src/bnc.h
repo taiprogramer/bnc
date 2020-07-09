@@ -2,7 +2,8 @@
 #define BNC_H
 
 // [entry macro replace main function]
-#define ENTRY int main(int argc, char* argv[]) 
+#define ENTRY int main(int argc, char* argv[]){
+#define EXIT return 0; }
 
 // [datatypes]
 // char
