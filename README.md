@@ -1,4 +1,15 @@
 # BNC - A cool way to write C program.
+
+```c
+#include "bnc.h"
+
+ENTRY
+
+Screen.show("Hello, world!").newline();
+
+EXIT
+```
+
 ## [Installation]
 
 **On Linux**:
