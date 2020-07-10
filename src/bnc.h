@@ -26,6 +26,8 @@ typedef float real32var;
 typedef double real64var;
 typedef real64var realvar;
 
+#define ARRAY *
+
 // [stdout: Screen]
 struct Screen {
     struct Screen (*show)(stringvar);
