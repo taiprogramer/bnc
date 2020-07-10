@@ -42,4 +42,7 @@ gcc -o [executable] [sourcefile] -lbnc
 
 If you don't want to use this library anymore, goto **src/** folder & run `make uninstall` to get rid of this library.
 
+## [References]
+- [libcs50](https://github.com/cs50/libcs50)
+- [C Programming Tutorial: Creating Libraries](https://randu.org/tutorials/c/libraries.php)
 
