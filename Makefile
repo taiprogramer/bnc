@@ -4,12 +4,13 @@
 CC = gcc
 CFLAGS = -std=c11 -fstack-protector -pedantic-errors -Wunused-variable -Wall
 
+SRC_DIR = src/
 INSTALLED_DIR = /usr/lib/
 INClUDE_DIR = /usr/include/
-HEADER_FILE = bnc.h
-SOURCE_FILE = libbnc.c
-OBJ_FILE = libbnc.o
-STATIC_LIB = libbnc.a
+HEADER_FILE = $(SRC_DIR)bnc.h
+SOURCE_FILE = $(SRC_DIR)libbnc.c
+OBJ_FILE = $(SRC_DIR)libbnc.o
+STATIC_LIB = $(SRC_DIR)libbnc.a
 
 .PHONY: static install clean
 static:
@@ -25,5 +26,5 @@ uninstall:
 	@rm -rf $(INSTALLED_DIR)$(STATIC_LIB)
 
 clean:
-	@rm -rf *.o *.a
+	@rm -rf $(SRC_DIR)*.o $(SRC_DIR)*.a
 
