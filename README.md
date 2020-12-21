@@ -2,14 +2,16 @@
 
 **Note**: This library is under development. Enjoy it if you like. But **DO NOT** use in production.
 
+
+`hello_bnc.c`
+
 ```c
 #include "bnc.h"
 
-ENTRY
-
-Screen.show("Hello, world!").newline();
-
-EXIT
+entry {
+    struct bnc__ScreenType Screen = bnc__get_screen();
+    Screen.show("Hello, world!").newline();
+}
 ```
 
 ## [Installation]
@@ -36,8 +38,8 @@ Now, you're ready to go!
 
 To compile your program, just simply add -lbnc flag.
 
-```bash
-gcc -o [executable] [sourcefile] -lbnc
+```sh
+tcc -o [executable] [sourcefile] -lbnc
 ```
 
 ## [Uninstallation]
@@ -45,6 +47,5 @@ gcc -o [executable] [sourcefile] -lbnc
 If you don't want to use this library anymore, goto **bnc/** folder & run `make uninstall` to get rid of this library.
 
 ## [References]
-- [libcs50](https://github.com/cs50/libcs50)
 - [C Programming Tutorial: Creating Libraries](https://randu.org/tutorials/c/libraries.php)
 

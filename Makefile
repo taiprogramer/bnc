@@ -1,16 +1,15 @@
 # -*- Makefile -*-
 
 # [compiler & flags]
-CC = gcc
-CFLAGS = -std=c11 -fstack-protector -pedantic-errors -Wunused-variable -Wall
+CC = tcc
+CFLAGS = -std=c11 -Wall
 
-SRC_DIR = src/
 INSTALLED_DIR = /usr/lib/
 INClUDE_DIR = /usr/include/
-HEADER_FILE = $(SRC_DIR)bnc.h
-SOURCE_FILE = $(SRC_DIR)libbnc.c
-OBJ_FILE = $(SRC_DIR)libbnc.o
-STATIC_LIB = $(SRC_DIR)libbnc.a
+HEADER_FILE = src/bnc.h
+SOURCE_FILE = src/libbnc.c
+OBJ_FILE = src/libbnc.o
+STATIC_LIB = src/libbnc.a
 
 .PHONY: static install clean
 static:
@@ -26,5 +25,5 @@ uninstall:
 	@rm -rf $(INSTALLED_DIR)$(STATIC_LIB)
 
 clean:
-	@rm -rf $(SRC_DIR)*.o $(SRC_DIR)*.a
+	@rm -rf src/*.o src/*.a
 
