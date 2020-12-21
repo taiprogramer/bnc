@@ -1,6 +1,6 @@
 # BNC - A cool way to write C program.
 
-**Note**: This library is under development. Enjoy it if you like.
+**Note**: This library is under development. Enjoy it if you like. But **DO NOT** use in production.
 
 ```c
 #include "bnc.h"
