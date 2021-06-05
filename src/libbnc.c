@@ -21,3 +21,22 @@ struct bnc__ScreenType bnc__get_screen() {
     return Screen;
 }
 
+charvar bnc__wait_for_char() {
+    charvar c = getchar();
+
+    if (c == '\n' || c == EOF)
+	return c;
+    
+    // clear stdin buffer
+    charvar tmp;
+    while(tmp = getchar(), tmp != '\n' && tmp != EOF);
+
+    return c;
+}
+
+struct bnc__KeyboardType bnc__get_keyboard() {
+    struct bnc__KeyboardType Keyboard = {
+	&bnc__wait_for_char
+    };
+    return Keyboard;
+}
