@@ -14,6 +14,24 @@ entry {
 }
 ```
 
+## [Playaround]
+
+Goto [examples/](examples/) folder to see the source code. To compile and run example without
+installing library, run:
+
+```sh
+make prog=examples/[source_file_without_extension]
+./examples/[source_file_without_extension]
+```
+
+Example:
+
+```sh
+make prog=examples/hello_bnc
+./examples/hello_bnc
+```
+
+
 ## [Installation]
 
 **On Linux**:
@@ -44,7 +62,8 @@ tcc -o [executable] [sourcefile] -lbnc
 
 ## [Uninstallation]
 
-If you don't want to use this library anymore, goto **bnc/** folder & run `make uninstall` to get rid of this library.
+If you don't want to use this library anymore, goto **bnc/** folder & run `make uninstall` to get
+rid of this library.
 
 ## [References]
 - [C Programming Tutorial: Creating Libraries](https://randu.org/tutorials/c/libraries.php)
