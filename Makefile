@@ -11,6 +11,11 @@ SOURCE_FILE = src/libbnc.c
 OBJ_FILE = src/libbnc.o
 STATIC_LIB = src/libbnc.a
 
+# [cmd: make prog=foo]
+$(prog): $(prog).c static
+# ----- looking in src/ for header files
+	@tcc -Isrc -o $@ $< $(OBJ_FILE)
+
 .PHONY: static install clean
 static:
 	@$(CC) -c $(SOURCE_FILE) $(CFLAGS) -o $(OBJ_FILE)
