@@ -11,6 +11,7 @@ typedef char charvar;
 struct bnc__ScreenType {
     struct bnc__ScreenType (*show)(char*);
     struct bnc__ScreenType (*newline)();
+    struct bnc__ScreenType (*c)(charvar);
 };
 
 struct bnc__ScreenType bnc__get_screen();

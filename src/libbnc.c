@@ -4,20 +4,25 @@
 #include <string.h>
 
 struct bnc__ScreenType bnc__screen_show(char* message) {
-    printf("%s", message);
+    fputs(message, stdout);
     return bnc__get_screen();
 }
 
 struct bnc__ScreenType bnc__screen_newline() {
-    printf("\n");
+    fputc('\n', stdout);
+    return bnc__get_screen();
+}
+
+struct bnc__ScreenType bnc__screen_c(charvar c) {
+    fputc(c, stdout);
     return bnc__get_screen();
 }
 
 struct bnc__ScreenType bnc__get_screen() {
-    const struct bnc__ScreenType Screen = {
-	&bnc__screen_show,
-	&bnc__screen_newline
-    };
+    struct bnc__ScreenType Screen;
+    Screen.newline = bnc__screen_newline;
+    Screen.show = bnc__screen_show;
+    Screen.c = bnc__screen_c;
     return Screen;
 }
 
@@ -35,8 +40,7 @@ charvar bnc__wait_for_char() {
 }
 
 struct bnc__KeyboardType bnc__get_keyboard() {
-    struct bnc__KeyboardType Keyboard = {
-	&bnc__wait_for_char
-    };
+    struct bnc__KeyboardType Keyboard;
+    Keyboard.waitForChar = bnc__wait_for_char;
     return Keyboard;
 }
