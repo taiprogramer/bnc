@@ -2,6 +2,8 @@
 
 **Note**: This library is under development. Enjoy it if you like. But **DO NOT** use in production.
 
+And imporantant things, I made this library because It's fun to do. So, maybe it's stupid things,
+but it's ok.
 
 `hello_bnc.c`
 
@@ -33,6 +35,10 @@ make prog=examples/hello_bnc
 
 
 ## [Installation]
+
+**Note**: BNC suppose to work on 64-bit architecture only. Maybe you can make it works on any other
+architecture. But It's not my intent. Before install BNC, run all tests in **test/** to make sure
+everything is fine.
 
 **On Linux**:
 
