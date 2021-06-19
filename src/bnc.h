@@ -33,14 +33,13 @@ struct bnc__ScreenType {
     struct bnc__ScreenType (*c)(charvar);
 };
 
-struct bnc__ScreenType bnc__get_screen();
-
 // [stdin: Keyboard]
 struct bnc__KeyboardType {
     charvar (*waitForChar)();
 };
 
-struct bnc__KeyboardType bnc__get_keyboard();
+extern const struct bnc__ScreenType Screen;
+extern const struct bnc__KeyboardType Keyboard;
 
 #endif
 

@@ -3,30 +3,22 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct bnc__ScreenType bnc__screen_show(char* message) {
+static struct bnc__ScreenType bnc__screen_show(char* message) {
     fputs(message, stdout);
-    return bnc__get_screen();
-}
-
-struct bnc__ScreenType bnc__screen_newline() {
-    fputc('\n', stdout);
-    return bnc__get_screen();
-}
-
-struct bnc__ScreenType bnc__screen_c(charvar c) {
-    fputc(c, stdout);
-    return bnc__get_screen();
-}
-
-struct bnc__ScreenType bnc__get_screen() {
-    struct bnc__ScreenType Screen;
-    Screen.newline = bnc__screen_newline;
-    Screen.show = bnc__screen_show;
-    Screen.c = bnc__screen_c;
     return Screen;
 }
 
-charvar bnc__wait_for_char() {
+static struct bnc__ScreenType bnc__screen_newline() {
+    fputc('\n', stdout);
+    return Screen;
+}
+
+static struct bnc__ScreenType bnc__screen_c(charvar c) {
+    fputc(c, stdout);
+    return Screen;
+}
+
+static charvar bnc__wait_for_char() {
     charvar c = getchar();
 
     if (c == '\n' || c == EOF)
@@ -39,8 +31,13 @@ charvar bnc__wait_for_char() {
     return c;
 }
 
-struct bnc__KeyboardType bnc__get_keyboard() {
-    struct bnc__KeyboardType Keyboard;
-    Keyboard.waitForChar = bnc__wait_for_char;
-    return Keyboard;
-}
+const struct bnc__KeyboardType Keyboard = {
+    &bnc__wait_for_char
+};
+
+const struct bnc__ScreenType Screen = {
+    &bnc__screen_show,
+    &bnc__screen_newline,
+    &bnc__screen_c
+};
+
