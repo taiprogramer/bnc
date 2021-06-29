@@ -4,8 +4,8 @@
 CC = tcc
 CFLAGS = -std=c11 -Wall
 
-INSTALLED_DIR = /usr/lib/
-INClUDE_DIR = /usr/include/
+INSTALLED_DIR = /usr/local/lib/
+INClUDE_DIR = /usr/local/include/
 HEADER_FILE = src/bnc.h
 SOURCE_FILE = src/libbnc.c
 OBJ_FILE = src/libbnc.o
